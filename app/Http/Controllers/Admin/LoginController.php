@@ -43,9 +43,6 @@ class LoginController extends Controller
     }
     /**
      * 重写登录视图页面
-     * @author 晚黎
-     * @date   2016-09-05T23:06:16+0800
-     * @return [type]                   [description]
      */
     public function showLoginForm()
     {
@@ -53,9 +50,6 @@ class LoginController extends Controller
     }
     /**
      * 自定义认证驱动
-     * @author 晚黎
-     * @date   2016-09-05T23:53:07+0800
-     * @return [type]                   [description]
      */
     protected function guard()
     {
