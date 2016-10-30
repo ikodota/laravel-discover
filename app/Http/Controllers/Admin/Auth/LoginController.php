@@ -1,10 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
-
+namespace App\Http\Controllers\Admin\Auth;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -24,12 +21,11 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login / registration.
+     * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/admin/dash';
-    protected $username;
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -41,16 +37,13 @@ class LoginController extends Controller
         $this->middleware('guest:admin', ['except' => 'logout']);
         $this->username = config('admin.global.username');
     }
-    /**
-     * 重写登录视图页面
-     */
+
+
     public function showLoginForm()
     {
-        return view('admin.login.index');
+        return view('admin.auth.login');
     }
-    /**
-     * 自定义认证驱动
-     */
+
     protected function guard()
     {
         return auth()->guard('admin');

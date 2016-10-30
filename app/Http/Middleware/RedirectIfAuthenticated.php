@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             //return redirect('/home');
-            $url = $guard ? 'admin/dash':'/home';
+            $url = $guard ? '/admin':'/home';
             return redirect($url);
         }
 

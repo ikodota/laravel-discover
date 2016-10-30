@@ -13,7 +13,16 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir((mix) => {
+/*elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js');
+});*/
+
+
+/*
+elixir((mix) => {
+ mix.copy('vendor/almasaeed2010/adminlte/bootstrap/','public/vendor/adminlte/bootstrap')
+    .copy('vendor/almasaeed2010/adminlte/dist/','public/vendor/adminlte/dist')
+    .copy('vendor/almasaeed2010/adminlte/plugins/','public/vendor/adminlte/plugins');
 });
+*/

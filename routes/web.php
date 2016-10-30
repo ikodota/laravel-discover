@@ -21,9 +21,31 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ($router)
 {
-    $router->get('login', 'LoginController@showLoginForm')->name('admin.login');
-    $router->post('login', 'LoginController@login');
-    $router->post('logout', 'LoginController@logout');
 
-    $router->get('dash', 'DashboardController@index');
+    $router->get('login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+    $router->post('login', 'Auth\LoginController@login');
+    $router->post('logout', 'Auth\LoginController@logout');
+
+    $router->get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
+    $router->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    $router->get('password/reset', 'Auth\ResetPasswordController@showResetForm')->name('admin.reset');
+    $router->post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+
+    $router->get('', 'DashboardController@index');
 });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

@@ -169,6 +169,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         //
 
         /*

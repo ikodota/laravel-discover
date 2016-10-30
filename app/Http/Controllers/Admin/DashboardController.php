@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use JeroenNoten\LaravelAdminLte;
 
 class DashboardController extends Controller
 {
@@ -26,6 +25,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        dd('welcome ，'.auth('admin')->user()->name);
+        //dd('后台首页，当前用户名：'.auth('admin')->user()->name);
+        return view('admin.dashboard');
     }
 }

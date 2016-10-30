@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Admin extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -26,4 +26,23 @@ class Admin extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the e-mail address where password reset links are sent.
+     *
+     * @return string
+     */
+    public function getEmailForPasswordReset(){
+
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token){
+        $this->notify(new ResetPasswordNotification($token));
+    }
 }
