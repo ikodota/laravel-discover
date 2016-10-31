@@ -33,7 +33,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ($router)
 
 
 
-    $router->get('', 'DashboardController@index');
+    $router->get('dashboard', 'DashboardController@index');
+    $router->get('setting/site', 'Setting\SiteController@index');
+    $router->POST('setting/site', 'Setting\SiteController@save');
 });
 
 

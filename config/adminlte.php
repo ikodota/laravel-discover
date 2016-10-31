@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        /*'MAIN NAVIGATION',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
@@ -182,7 +182,7 @@ return [
         [
             'text'       => 'Information',
             'icon_color' => 'aqua',
-        ],
+        ],*/
     ],
 
     /*
@@ -217,6 +217,6 @@ return [
     */
 
     'plugins' => [
-        'datatables' => false,
+        'datatables' => true,
     ],
 ];
