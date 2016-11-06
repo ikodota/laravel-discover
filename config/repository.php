@@ -223,14 +223,14 @@ return [
         'rootNamespace' => 'App\\',
         'paths'         => [
             'models'       => 'Entities',
-            'repositories' => 'Repositories',
-            'interfaces'   => 'Repositories',
+            'repositories' => 'Repositories\\Implements',
+            'interfaces'   => 'Repositories\\Interfaces',
             'transformers' => 'Transformers',
             'presenters'   => 'Presenters',
             'validators'   => 'Validators',
             'controllers'  => 'Http/Controllers',
             'provider'     => 'RepositoryServiceProvider',
-            'criteria'     => 'Criteria',
+            'criteria'     => 'Repositories\\Criteria',
             'stubsOverridePath' => app_path()
         ]
     ]

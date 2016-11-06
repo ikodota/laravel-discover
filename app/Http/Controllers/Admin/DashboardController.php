@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace app\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use app\Http\Controllers\Controller;
 use JeroenNoten\LaravelAdminLte;
 
 class DashboardController extends Controller

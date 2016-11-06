@@ -11,7 +11,9 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Models\Admin',1)->create([
+        factory('App\Admin',1)->create([
+            'name' => 'admin',
+            'email' => '28341847@qq.com',
             'password' => bcrypt('123456')
         ]);
     }

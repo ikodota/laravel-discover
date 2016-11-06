@@ -34,20 +34,12 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ($router)
 
 
     $router->get('dashboard', 'DashboardController@index');
-    $router->get('setting/site', 'Setting\SiteController@index');
-    $router->POST('setting/site', 'Setting\SiteController@save');
+    $router->get('setting/site', 'Setting\WebsiteController@index');
+    $router->POST('setting/site', 'Setting\WebsiteController@save');
+    $router->get('setting/attachment', 'Setting\AttachmentController@index');
+    $router->POST('setting/attachment', 'Setting\AttachmentController@save');
+    $router->get('setting/attachment/test/qiniu', 'Setting\AttachmentController@testQiniu');
 });
 
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');

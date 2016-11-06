@@ -63,7 +63,7 @@ return [
             'collation' => 'utf8_unicode_ci',
             'prefix' => env('DB_PREFIX', ''),
             'strict' => true,
-            'engine' => null,
+            'engine' => 'INNODB',
         ],
 
         'pgsql' => [

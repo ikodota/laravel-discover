@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',    //en
+    'locale' => 'zh_cn',    //en
 
     /*
     |--------------------------------------------------------------------------
@@ -170,16 +170,17 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+        Nwidart\DbExporter\DbExportHandlerServiceProvider::class,
+        Yangyifan\Upload\UploadServiceProvider::class,
         //
-
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        app\Providers\AppServiceProvider::class,
+        app\Providers\AuthServiceProvider::class,
+        // app\Providers\BroadcastServiceProvider::class,
+        app\Providers\EventServiceProvider::class,
+        app\Providers\RouteServiceProvider::class,
 
     ],
 

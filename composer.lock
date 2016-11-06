@@ -4,9 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a7750abe2f597eda7018454996d3c95",
-    "content-hash": "61a0201e452699827cfcea64313bd4be",
+    "hash": "6ef93d5410d96e0db10f80e564c00862",
+    "content-hash": "65b84380c152de183e983000ec8bf57f",
     "packages": [
+        {
+            "name": "aliyuncs/oss-sdk-php",
+            "version": "v2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+                "reference": "74e427241d748af5bf0c2fa9d0b614b56bd46f9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/aliyun/aliyun-oss-php-sdk/74e427241d748af5bf0c2fa9d0b614b56bd46f9b.zip",
+                "reference": "74e427241d748af5bf0c2fa9d0b614b56bd46f9b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSS\\": "src/OSS"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aliyuncs",
+                    "homepage": "http://www.aliyun.com"
+                }
+            ],
+            "description": "Aliyun OSS SDK for PHP",
+            "homepage": "http://www.aliyun.com/product/oss/",
+            "time": "2016-06-17 01:57:24"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -308,16 +349,16 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v1.15.1",
+            "version": "v1.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "22b591c455f588f91f3f2ddc343a77de3b8dfb06"
+                "reference": "210ca4ac3ee534605ec22b2bc29f10492a34c31f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/jeroennoten/Laravel-AdminLTE/22b591c455f588f91f3f2ddc343a77de3b8dfb06.zip",
-                "reference": "22b591c455f588f91f3f2ddc343a77de3b8dfb06",
+                "url": "https://packagist.phpcomposer.com/files/jeroennoten/Laravel-AdminLTE/210ca4ac3ee534605ec22b2bc29f10492a34c31f.zip",
+                "reference": "210ca4ac3ee534605ec22b2bc29f10492a34c31f",
                 "shasum": ""
             },
             "require": {
@@ -350,20 +391,20 @@
                 "administrator",
                 "laravel"
             ],
-            "time": "2016-10-20 08:08:39"
+            "time": "2016-10-31 19:52:56"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.21",
+            "version": "v5.3.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "140ad823863d5cc6f4580f1cdf9b18b9a6a457f4"
+                "reference": "715328dd4fb1a7bcf3cb41b3472f9e3499d068fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laravel/framework/140ad823863d5cc6f4580f1cdf9b18b9a6a457f4.zip",
-                "reference": "140ad823863d5cc6f4580f1cdf9b18b9a6a457f4",
+                "url": "https://packagist.phpcomposer.com/files/laravel/framework/715328dd4fb1a7bcf3cb41b3472f9e3499d068fc.zip",
+                "reference": "715328dd4fb1a7bcf3cb41b3472f9e3499d068fc",
                 "shasum": ""
             },
             "require": {
@@ -478,7 +519,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-10-26 13:27:05"
+            "time": "2016-11-01 18:52:00"
         },
         {
             "name": "league/flysystem",
@@ -562,6 +603,69 @@
                 "storage"
             ],
             "time": "2016-10-19 20:38:46"
+        },
+        {
+            "name": "league/fractal",
+            "version": "0.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "56ad8933fbb40328ca3321c84143b2c16186eebf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/fractal/56ad8933fbb40328ca3321c84143b2c16186eebf.zip",
+                "reference": "56ad8933fbb40328ca3321c84143b2c16186eebf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "illuminate/contracts": "~5.0",
+                "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for API output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2016-07-21 09:56:14"
         },
         {
             "name": "monolog/monolog",
@@ -782,6 +886,53 @@
                 "php"
             ],
             "time": "2016-09-16 12:04:44"
+        },
+        {
+            "name": "nwidart/db-exporter",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nWidart/DbExporter.git",
+                "reference": "ce8da8782ed1e478a761ec51cd4dedeff44ac654"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/nWidart/DbExporter/ce8da8782ed1e478a761ec51cd4dedeff44ac654.zip",
+                "reference": "ce8da8782ed1e478a761ec51cd4dedeff44ac654",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.*|5.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Nwidart\\DbExporter": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Widart",
+                    "email": "n.widart@gmail.com"
+                }
+            ],
+            "description": "Export your database quickly and easily as a Laravel Migration and all the data as a Seeder class.",
+            "keywords": [
+                "artisan",
+                "command",
+                "database",
+                "export",
+                "laravel",
+                "migrations",
+                "php",
+                "seed"
+            ],
+            "time": "2015-04-24 05:56:41"
         },
         {
             "name": "paragonie/random_compat",
@@ -1049,6 +1200,57 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "qiniu/php-sdk",
+            "version": "v7.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qiniu/php-sdk.git",
+                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/qiniu/php-sdk/d1bca450b56d85beb7ba21f374a47bfeb59c288b.zip",
+                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Qiniu\\": "src/Qiniu"
+                },
+                "files": [
+                    "src/Qiniu/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Qiniu",
+                    "email": "sdk@qiniu.com",
+                    "homepage": "http://www.qiniu.com"
+                }
+            ],
+            "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
+            "homepage": "http://developer.qiniu.com/",
+            "keywords": [
+                "cloud",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2016-07-19 06:18:08"
         },
         {
             "name": "ramsey/uuid",
@@ -2012,6 +2214,52 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "yangyifan/upload",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tyua07/laravel-upload.git",
+                "reference": "ee9e7145ad4cbb90c2a98186f1280b1ddb57f475"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/tyua07/laravel-upload/ee9e7145ad4cbb90c2a98186f1280b1ddb57f475.zip",
+                "reference": "ee9e7145ad4cbb90c2a98186f1280b1ddb57f475",
+                "shasum": ""
+            },
+            "require": {
+                "aliyuncs/oss-sdk-php": "*",
+                "qiniu/php-sdk": "v7.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yangyifan\\Upload\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yangyifan",
+                    "email": "yangyifanphp@gmail.com"
+                }
+            ],
+            "description": "上传 SDK for Laravel",
+            "keywords": [
+                "laravel",
+                "oss",
+                "qiniu",
+                "sdk",
+                "tyua07",
+                "upload",
+                "upyun"
+            ],
+            "time": "2016-09-20 03:15:43"
         }
     ],
     "packages-dev": [
@@ -2332,6 +2580,68 @@
             "time": "2015-05-11 14:41:42"
         },
         {
+            "name": "hinet/flysystem-qiniu",
+            "version": "0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hinet/flysystem-qiniu.git",
+                "reference": "092eee6dcb861e382de78bff270f7e80238ab18f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/hinet/flysystem-qiniu/092eee6dcb861e382de78bff270f7e80238ab18f.zip",
+                "reference": "092eee6dcb861e382de78bff270f7e80238ab18f",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "~1.0",
+                "php": ">=5.5.0",
+                "qiniu/php-sdk": "~7.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
+                "phpspec/phpspec": "^2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "hinet\\Flysystem\\Qiniu\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pole Vong",
+                    "email": "polevong@live.com"
+                },
+                {
+                    "name": "hinet",
+                    "email": "63603636@qq.com",
+                    "homepage": "http://github.com/hinet"
+                }
+            ],
+            "description": "Flysystem adapter for the Qiniu SDK v7.x",
+            "keywords": [
+                "cloud",
+                "flysystem qiniu",
+                "laravel",
+                "laravel qiniu",
+                "laravel5",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2016-07-04 10:01:46"
+        },
+        {
             "name": "maximebf/debugbar",
             "version": "v1.13.0",
             "source": {
@@ -2459,16 +2769,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.4",
+            "version": "1.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f"
+                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
-                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
+                "url": "https://packagist.phpcomposer.com/files/myclabs/DeepCopy/399c1f9781e222f6eb6cc238796f5200d1b7f108.zip",
+                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108",
                 "shasum": ""
             },
             "require": {
@@ -2497,7 +2807,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-09-16 13:37:59"
+            "time": "2016-10-31 17:19:45"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2709,16 +3019,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "5f3f7e736d6319d5f1fc402aff8b026da26709a3"
+                "reference": "6cba06ff75a1a63a71033e1a01b89056f3af1e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/5f3f7e736d6319d5f1fc402aff8b026da26709a3",
-                "reference": "5f3f7e736d6319d5f1fc402aff8b026da26709a3",
+                "url": "https://packagist.phpcomposer.com/files/sebastianbergmann/php-code-coverage/6cba06ff75a1a63a71033e1a01b89056f3af1e8d.zip",
+                "reference": "6cba06ff75a1a63a71033e1a01b89056f3af1e8d",
                 "shasum": ""
             },
             "require": {
@@ -2768,7 +3078,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-07-26 14:39:29"
+            "time": "2016-11-01 05:06:24"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3872,7 +4182,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "yangyifan/upload": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
