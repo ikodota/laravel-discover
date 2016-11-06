@@ -15,7 +15,7 @@ laravel demo project
 管理员管理及权限
 商品管理
 购买流程逻辑（含前端）
-订单管理
+订单管理 
 数据统计
 Dashboard
 前端页面
