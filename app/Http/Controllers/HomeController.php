@@ -1,7 +1,8 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //return view('home');
+        $test=Role::find(1);
+        $test->name='super_admin';
+        $test->display_name='超级管理员';
+        $result=$test->save();
+        if ($result) {
+            echo "saved success";
+        }else{
+            echo "saved fail";
+        }
     }
 }

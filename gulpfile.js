@@ -13,9 +13,14 @@ require('laravel-elixir-vue-2');
  |
  */
 
-/*elixir((mix) => {
+elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js');
+});
+/*
+elixir((mix) => {
+ mix.sass('vendor/adminlte/src/scss/custom.scss','vendor/adminlte/build/css/custom.scss')
+ .webpack('vendor/adminlte/src/js/custom.js','vendor/adminlte/build/js/custom.min.js');
 });*/
 
 

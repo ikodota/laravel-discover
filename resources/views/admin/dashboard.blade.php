@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.admin_page')
 
 @section('title', 'Dashboard')
 
@@ -10,14 +10,13 @@
     <p>Welcome to this beautiful admin panel.</p>
 @stop
 
-@section('css')
+@section('style')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    @stack('style')
 @stop
-@stack('css')
-@yield('css')
 
-@section('js')
+
+@section('script')
     <script> console.log('Hi!'); </script>
+    @stack('script')
 @stop
-@stack('js')
-@yield('js')

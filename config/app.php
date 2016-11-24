@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -169,18 +169,18 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
-        Nwidart\DbExporter\DbExportHandlerServiceProvider::class,
         Yangyifan\Upload\UploadServiceProvider::class,
+        OwenIt\Auditing\AuditingServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         //
         /*
          * Application Service Providers...
          */
-        app\Providers\AppServiceProvider::class,
-        app\Providers\AuthServiceProvider::class,
-        // app\Providers\BroadcastServiceProvider::class,
-        app\Providers\EventServiceProvider::class,
-        app\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

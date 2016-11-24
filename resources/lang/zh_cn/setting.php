@@ -7,6 +7,7 @@
 
 return [
         'website'               => [
+            'title'                     => '站点设置',
             'setting'                   => '网站设置',
             'base_info'                 => '基础信息',
             'status'                    => '网站状态',

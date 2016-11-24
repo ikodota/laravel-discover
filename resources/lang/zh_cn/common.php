@@ -13,7 +13,8 @@ return [
             'save'      => '保存',
             'edit'      => '编辑',
             'upload'    => '上传',
-            'go_back'   => '返回',
+            'back'   => '返回',
+
         ],
         'option'                =>[
                 'close' => '关闭',
@@ -26,5 +27,8 @@ return [
                 'disable'   => '禁用',
                 'yes'   => '是',
                 'no'    => '否',
+        ],
+        'text'                  =>[
+                'tag' =>  '新增标签'
         ]
 ];

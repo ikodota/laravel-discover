@@ -1,9 +1,10 @@
 <?php
 
-namespace app;
-
+namespace App;
+use App\Models\Role;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable
 {
@@ -24,6 +25,49 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','is_admin',
     ];
+
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    /**
+     * 判断用户是否具有某个角色
+     *
+     * @param $role
+     * @return bool
+     */
+    public function hasRole($role)
+    {
+        if (is_string($role)) {
+            return $this->roles->contains('name', $role);
+        }
+
+        return !! $role->intersect($this->roles)->count();
+    }
+
+    /**
+     * 判断用户是否具有某权限
+     *
+     * @param $permission
+     * @return bool
+     */
+    public function hasPermission($permission)
+    {
+        return $this->hasRole($permission->roles);
+    }
+
+    /**
+     * 判断是否为超级管理员，用于跳过权限检查
+     * @return bool
+     */
+    public function isSuperAdmin()
+    {
+        //这里从数据表中判断是否为超级管理员，也可从角色或拥有权限去判断。
+        return $this->name == 'admin';
+    }
+
 }

@@ -1,20 +1,17 @@
 <?php
 
-namespace app\Http\Controllers\Admin\Setting;
+namespace App\Http\Controllers\Admin\Setting;
 
+use App\Http\Requests\Admin\WebsiteForm;
+use App\Models\Settings;
 use Illuminate\Http\Request;
-use app\Http\Controllers\Controller;
-use JeroenNoten\LaravelAdminLte;
+use App\Http\Controllers\Admin\Controller;
 use Illuminate\Support\Facades\Config;
-use app\Settings as Settings;
+use Illuminate\Support\Facades\Gate;
+use League\Flysystem\Exception;
 
 class WebsiteController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth.admin:admin');
-    }
-
     public function index()
     {
         //dd('test');
@@ -26,45 +23,58 @@ class WebsiteController extends Controller
         }
         return view('admin.setting.website')->with($arr);
     }
-    public function save(Request $request)
+
+
+    public function save(WebsiteForm $request)
     {
-        //neet save in database;
+        if (Gate::foruser($this->loggedUser())->denies('admin.setting.website')) {
+            abort(403);
+        }
+        
         $inputs = $request->except('_token');
-        //$setting = new Settings();
-        foreach ($inputs as $key => $value)
+        try {
+
+            foreach ($inputs as $key => $value)
+            {
+                $setting = Settings::firstOrNew([
+                    'key' => $key,
+                ]);
+                $setting->value = $value;
+                $setting->type = 'website';
+                $setting->save();
+            }
+
+            if(!isset($inputs['website_status'])){
+                $setting = Settings::firstOrNew([
+                    'key' => 'website_status',
+                ]);
+                $setting->value = 'off';
+                $setting->type = 'website';
+                $setting->save();
+            }
+            if(!isset($inputs['verify_code_reg'])){
+                $setting = Settings::firstOrNew([
+                    'key' => 'verify_code_reg',
+                ]);
+                $setting->value = 'off';
+                $setting->type = 'website';
+                $setting->save();
+            }
+            if(!isset($inputs['verify_code_login'])){
+                $setting = Settings::firstOrNew([
+                    'key' => 'verify_code_login',
+                ]);
+                $setting->value = 'off';
+                $setting->type = 'website';
+                $setting->save();
+            }
+            return redirect()->back()->withSuccess(trans('system.success.save_setting'));
+        }
+        catch (\Exception $e)
         {
-            $setting = Settings::firstOrNew([
-                'key' => $key,
-            ]);
-            $setting->value = $value;
-            $setting->type = 'website';
-            $setting->save();
+            return redirect()->back()->withErrors(array('error' => $e->getMessage()))->withInput();
         }
-        if(!isset($inputs['website_status'])){
-            $setting = Settings::firstOrNew([
-                'key' => 'website_status',
-            ]);
-            $setting->value = 'off';
-            $setting->type = 'website';
-            $setting->save();
-        }
-        if(!isset($inputs['verify_code_reg'])){
-            $setting = Settings::firstOrNew([
-                'key' => 'verify_code_reg',
-            ]);
-            $setting->value = 'off';
-            $setting->type = 'website';
-            $setting->save();
-        }
-        if(!isset($inputs['verify_code_login'])){
-            $setting = Settings::firstOrNew([
-                'key' => 'verify_code_login',
-            ]);
-            $setting->value = 'off';
-            $setting->type = 'website';
-            $setting->save();
-        }
-        $request->session()->flash('flash_message', 'Save successful!');
-        return redirect()->back();
     }
+
+
 }

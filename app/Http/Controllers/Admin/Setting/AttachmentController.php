@@ -1,24 +1,20 @@
 <?php
 
-namespace app\Http\Controllers\Admin\Setting;
+namespace App\Http\Controllers\Admin\Setting;
 
+use Illuminate\Support\Facades\Gate;
+use App\Models\Settings;
+use App\Http\Controllers\Admin\Controller;
 use Illuminate\Http\Request;
-use app\Http\Controllers\Controller;
-use JeroenNoten\LaravelAdminLte;
 use Illuminate\Support\Facades\Config;
-use Storage;
-use app\Settings as Settings;
+
 
 class AttachmentController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth.admin:admin');
-    }
-
     public function index()
     {
         //dd('test');
+
         $settings = Settings::where('type', 'attachment')
             ->get();
         $arr=[];
@@ -34,40 +30,52 @@ class AttachmentController extends Controller
      */
     public function save(Request $request)
     {
+
+        if (Gate::foruser($this->loggedUser())->deny('admin.attachment.config')) {
+            abort(403);
+        }
         //neet save in database;
         $inputs = $request->except('_token');
         //$setting = new Settings();
         foreach ($inputs as $key => $value)
         {
+
             $setting = Settings::firstOrNew([
                 'key' => $key,
             ]);
             $setting->value = $value;
             $setting->type = 'attachment';
+
             $setting->save();
         }
         if(!isset($inputs['if_thumbnail'])){
+
             $setting = Settings::firstOrNew([
                 'key' => 'if_thumbnail',
             ]);
             $setting->value = 'off';
             $setting->type = 'attachment';
+           
             $setting->save();
         }
         if(!isset($inputs['ftp_if_ssl'])){
+            
             $setting = Settings::firstOrNew([
                 'key' => 'ftp_if_ssl',
             ]);
             $setting->value = 'off';
             $setting->type = 'attachment';
+
             $setting->save();
         }
         if(!isset($inputs['ftp_if_pasv'])){
+
             $setting = Settings::firstOrNew([
                 'key' => 'ftp_if_pasv',
             ]);
             $setting->value = 'off';
             $setting->type = 'attachment';
+
             $setting->save();
         }
 
@@ -80,9 +88,13 @@ class AttachmentController extends Controller
         //echo $request->input('qiniu_app_key');
         //Config::set('filesystems.default','local');
         //Config::set('filesystems.cloud','qiniu');
+
         Config::set('filesystems.disks.qiniu.access_key',$request->input('qiniu_app_key'));
+
         Config::set('filesystems.disks.qiniu.secret_key',$request->input('qiniu_app_secret'));
+
         Config::set('filesystems.disks.qiniu.bucket',$request->input('qiniu_bucket'));
+
         Config::set('filesystems.disks.qiniu.domain',$request->input('qiniu_domain'));
 
         //$config = App::['config']["filesystems.disks.qiniu"];
@@ -93,9 +105,11 @@ class AttachmentController extends Controller
         //dump($drive->has($image1));
         $test_file='test_file.txt';
         $test_content=date('Y-m-d H:i:s');
+
         if($drive->has($test_file)){
             $drive->delete($test_file); //删除后重新上传
         }
+
         $result=$drive->write($test_file,$test_content);
         if($result){
             return 'true';

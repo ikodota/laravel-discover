@@ -16,19 +16,4 @@ return [
         'data'                          => 'data analysis',
         'merchant'                      => 'merchant',
         'application'                   => 'application',
-        'site_setting'                  => [
-            'menu_name'     => 'website setting',
-        ],
-        'attachment_setting'         => [
-            'menu_name'     => 'attachment setting'
-        ],
-        'payment_setting'            => [
-            'menu_name'     => 'payment setting'
-        ],
-        'notice_setting'             => [
-            'menu_name'     => 'notice setting'
-        ],
-        'other_setting'              => [
-            'menu_name'     => 'other setting'
-        ],
 ];

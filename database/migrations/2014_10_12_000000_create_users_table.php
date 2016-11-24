@@ -139,6 +139,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('users');
         Schema::dropIfExists('user_address');
         Schema::dropIfExists('user_cart');
@@ -146,6 +147,7 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('user_group');
         Schema::dropIfExists('user_history');
         Schema::dropIfExists('user_level');
+        Schema::enableForeignKeyConstraints();
 
     }
 }

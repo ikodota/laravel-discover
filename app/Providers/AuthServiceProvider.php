@@ -1,7 +1,8 @@
 <?php
 
-namespace app\Providers;
+namespace App\Providers;
 
+use App\Models\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -13,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'app\Model' => 'app\Policies\ModelPolicy',
+        'App\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -25,6 +26,17 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        foreach ($this->getPermissions() as $permission){
+            Gate::define($permission->name,function($user) use ($permission){
+                if($user->isSuperAdmin() || $user->hasPermission($permission)){
+                    return true;
+                }
+            });
+        }
+    }
+
+    public function getPermissions()
+    {
+        return Permission::with('roles')->get();//拿到所有的permissions和对应的roles
     }
 }
