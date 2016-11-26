@@ -1,17 +1,15 @@
-## Yeo-admin Introduction
+## laravel-discover Introduction
 
 [![GitHub release](https://img.shields.io/github/release/ikodota/laravel-discover.svg)]()
 [![Total Downloads](https://img.shields.io/github/downloads/ikdoota/laravel-discover/latest/total.svg)]()
 [![StyleCI](https://styleci.io/repos/44852299/shield)](https://styleci.io/repos/44852299)
 [![Packagist](https://img.shields.io/packagist/l/ikodota/laravel-discover.svg)]()
 
-
+ 
 
 **This is an alpha, experimental release of Antvel. Everything will change gradually,ttps://styleci.io/repos/44852299 looking forward to get the best of this awesome product. Thank you for testing!**
 
-***Laravel-discover*** is a backend management project written in Laravel 5.3 intended for building a friendly eStore either for startups or big companies, and is highly opinionated towards that use case. Because it is a platform already built, you only will need to add as many products as you need  to start selling and taking orders from customers
-
-***Laravel-discover*** aim is giving to you and your clients the best eCommerse experience in a different aproach!
+***Laravel-discover*** is a backend management project written in Laravel 5.3 intended for building a friendly backend management system.
 
 <a name="installation"></a>
 >## Installation
