@@ -6,7 +6,6 @@
 [![Packagist](https://img.shields.io/packagist/l/ikodota/laravel-discover.svg)]()
 
  
-
 **This is an alpha, experimental release of Antvel. Everything will change gradually,ttps://styleci.io/repos/44852299 looking forward to get the best of this awesome product. Thank you for testing!**
 
 ***Laravel-discover*** is a backend management project written in Laravel 5.3 intended for building a friendly backend management system.
