@@ -37,6 +37,11 @@ class AuthServiceProvider extends ServiceProvider
 
     public function getPermissions()
     {
-        return Permission::with('roles')->get();//拿到所有的permissions和对应的roles
+        try{
+            return Permission::with('roles')->get();//拿到所有的permissions和对应的roles
+        }catch (\Exception $exception){
+            return;
+        }
+
     }
 }

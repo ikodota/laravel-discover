@@ -14,31 +14,27 @@
 ***Laravel-discover*** aim is giving to you and your clients the best eCommerse experience in a different aproach!
 
 <a name="installation"></a>
-## Installation
-
-You can install laravel-discover in two ways.
+>## Installation
 
 The first way is using composer, just run this command in your terminal:
 
 ```bash
-composer require ikodota/laravel-discover
+composer create-project ikodota/laravel-discover:master@dev your-project-name --no-scripts
+cd your-project-name
+composer update
 ```
 
 The second way is cloning this repo, for that you need to run this commands:
 
 ```
 git clone https://github.com/ikodota/laravel-discover.git
+composer update
 ```
 
 
-Next, you will need to run composer update/install into your ***laravel-discover*** project folder
-```
-composer update/install
-```
+>## Setting up
 
-## Setting up
-
-After install set up your .env file, if this not exist you can copy the .env-example file and store like .env file in the root of your antVel intallation. Then change  the variables values with yours.
+After install set up your .env file, if this not exist you can copy the .env-example file and store like .env file in the root of your laravel-discover intallation. Then change  the variables values with yours.
 
 Be sure to create  your database and define the name and access credentials of it on the .env file.
 Then you have to create the Laravel-discover schema running artisan migrate command:
@@ -59,11 +55,8 @@ You need to run ***bower install***, in order to have all the frontend dependenc
 bower install
 ```
 
-## To do list
-If you like laravel-discover and want to contribute to its core, you can check this task list.
 
-
-## Using Laravel Elixir
+>## Using Laravel Elixir
 
 First at all, you need to install Gulp package typing this command line in your terminal. Like so:
 

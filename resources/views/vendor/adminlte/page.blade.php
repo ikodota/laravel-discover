@@ -128,6 +128,7 @@
 
     </div>
     <!-- ./wrapper -->
+    @yield('body_dialog');
 @stop
 
 @section('adminlte_js')
