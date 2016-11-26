@@ -1,7 +1,7 @@
 ## Yeo-admin Introduction
 
+[![GitHub release](https://img.shields.io/github/release/ikodota/laravel-discover.svg)]()
 [![Total Downloads](https://img.shields.io/github/downloads/ikdoota/laravel-discover/latest/total.svg)]()
-[![Bower](https://img.shields.io/bower/v/bootstrap.svg?style=flat-square)]()
 [![StyleCI](https://styleci.io/repos/44852299/shield)](https://styleci.io/repos/44852299)
 [![Packagist](https://img.shields.io/packagist/l/ikodota/laravel-discover.svg)]()
 

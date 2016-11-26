@@ -1681,7 +1681,7 @@ class CreatediscoverDatabase extends Migration {
                 $table->boolean('is_usecard')->unsigned();
                 $table->boolean('card_type')->unsigned();
                 $table->string('card_id', 50);
-                $table->decimal('card_fee', 10,2) unsigne)->unsigned();
+                $table->decimal('card_fee', 10,2)->unsigned();
                 $table->string('encrypt_code', 100);
                 $table->string('uniontid', 50);
                 $table->index('idx_openid');
