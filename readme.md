@@ -52,7 +52,6 @@ You need to run ***bower install***, in order to have all the frontend dependenc
 bower install
 ```
 
-
 >## Using Laravel Elixir
 
 First at all, you need to install Gulp package typing this command line in your terminal. Like so:
